@@ -79,13 +79,28 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="杰瑞李">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="先了解下六层抽象及相应的组成部分，然后再看下七个关键的 K8s API 对象。 K8s 的 6 个抽象层 我们假设有一个持续运行且不需要存储状态的应用。  下面是 K8s 的6层抽象，级别由高到低排列：  Deployment ReplicaSet Pod Node Cluster Node Processes Docker Container  Deployment 负责创建及管理 Replic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】k8s核心概念总结">
+<meta property="og:url" content="http://yoursite.com/2019/10/29/【笔记】k8s核心概念总结/index.html">
 <meta property="og:site_name" content="杰瑞李">
+<meta property="og:description" content="先了解下六层抽象及相应的组成部分，然后再看下七个关键的 K8s API 对象。 K8s 的 6 个抽象层 我们假设有一个持续运行且不需要存储状态的应用。  下面是 K8s 的6层抽象，级别由高到低排列：  Deployment ReplicaSet Pod Node Cluster Node Processes Docker Container  Deployment 负责创建及管理 Replic">
 <meta property="og:locale" content="CN">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f530v2fzj30a70gz74m.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f539gnc1j30ji0gct9p.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f53zq77dj30hs0bvdg5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f5522gu3j30hg0got9y.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f56bmoe6j30h30awmxz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f56tkqx1j30fq0ag3z5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f58iopqcj30ig0ad3zf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f58vpdi8j30u00mfjv9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f59o1azkj30hs0bumz6.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f5ajv9xmj30hs0bu40l.jpg">
+<meta property="og:updated_time" content="2019-10-29T08:23:40.763Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杰瑞李">
+<meta name="twitter:title" content="【笔记】k8s核心概念总结">
+<meta name="twitter:description" content="先了解下六层抽象及相应的组成部分，然后再看下七个关键的 K8s API 对象。 K8s 的 6 个抽象层 我们假设有一个持续运行且不需要存储状态的应用。  下面是 K8s 的6层抽象，级别由高到低排列：  Deployment ReplicaSet Pod Node Cluster Node Processes Docker Container  Deployment 负责创建及管理 Replic">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f530v2fzj30a70gz74m.jpg">
 
 
 
@@ -115,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/29/【笔记】k8s核心概念总结/">
 
 
 
 
 
-  <title>杰瑞李</title>
+  <title>【笔记】k8s核心概念总结 | 杰瑞李</title>
   
 
 
@@ -140,8 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/29/【笔记】k8s核心概念总结/" itemprop="url">【笔记】k8s核心概念总结</a></h1>
+          <h1 class="post-title" itemprop="name headline">【笔记】k8s核心概念总结</h1>
         
 
         <div class="post-meta">
@@ -298,9 +310,7 @@
       
 
       
-        
-          
-            <p>先了解下六层抽象及相应的组成部分，然后再看下七个关键的 K8s API 对象。</p>
+        <p>先了解下六层抽象及相应的组成部分，然后再看下七个关键的 K8s API 对象。</p>
 <p>K8s 的 6 个抽象层</p>
 <p>我们假设有一个持续运行且不需要存储状态的应用。</p>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f530v2fzj30a70gz74m.jpg" alt></p>
@@ -497,8 +507,6 @@
 </ol>
 <p>原文链接：<a href="https://towardsdatascience.com/key-kubernetes-concepts-62939f4bc08e" target="_blank" rel="noopener">https://towardsdatascience.com/key-kubernetes-concepts-62939f4bc08e</a></p>
 
-          
-        
       
     </div>
     
@@ -515,134 +523,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/【泛PM】云产品与C端产品设计差异/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry Lee">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杰瑞李">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/23/【泛PM】云产品与C端产品设计差异/" itemprop="url">【泛PM】云产品与C端产品设计差异</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-23T19:44:30+08:00">
-                2019-10-23
-              </time>
+              <a href="/2019/10/23/【泛PM】云产品与C端产品设计差异/" rel="next" title="【泛PM】云产品与C端产品设计差异">
+                <i class="fa fa-chevron-left"></i> 【泛PM】云产品与C端产品设计差异
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>最近在进行云平台产品设计时，一个困惑是产品功能无法完全地通过产品设计来展现给用户，简单说就是云产品、复杂B端产品通常会涉及到专业的业务知识。这里的业务知识是指广义的业务，比如为开发者服务的云平台，通常涉及到许多“晦涩”的技术背景知识，例如开源框架的使用。这时的产品信息架构中，便会不可避免出现小白（指我）无法一眼理解的模块设计，例如云产品中的集群、部署组、可用区等概念，以及正常用户产品认为是不完美的使用地图和交互。</p>
-<p>一个解决方案是牺牲页面的简洁，添加各种引导文案及标识来被动加快用户适应的进度；另一个方案是用户文档，产出更高要求的用户文档来主动指导用户更快地了解产品的使用路径，减少试错成本。</p>
-<p>当然并不是说产品设计不重要，而是在特定场景下，目标用户通常是有一定的学习力，用户文档会是更好的方式实现“优化”，与其在添加太多跳转与引导文字，既增加了信息架构的复杂度，又增加了操作路径；不如利用文档来辅助产品设计</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -652,497 +554,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/【复盘】搜索提升变现效率case/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry Lee">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杰瑞李">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/【复盘】搜索提升变现效率case/" itemprop="url">【复盘】搜索提升变现效率case</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T19:02:57+08:00">
-                2019-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在此回想和记录下第一次实习时改进搜索策略，提升广告变现效率的方案。</p>
-<p>2345手机助手一直是应用宝流量联盟比较重要的Top渠道方，日均能带来10w+流水，方案背景是针对2345搜索场景变现效率不足情况，通过调整搜索召回策略及改进广告展示样式来提高pvr广告展现率，同时提升返回的商业化结果转化率。</p>
-<p>首先对合作渠道方提供的单月Query数据进行数据分析，得到数据集的描述统计变量，query词数量总共18w，产生总QV日均200w，其中Top1000 query个数所占比约69%，体现query分布的长尾效应。Top100 query产生的QV中，54%来自模糊词，eg.「一」「我」「w」「小」等，前缀词&amp;精准词匹配到的结果以非广告结果为主，占比约71.5%。</p>
-<p>以上数据表明，模糊词query占query总数绝大部分，大量query下无商业化曝光，优化策略的主要方向是通过召回热搜、专题等内容来提升广告的曝光量，提升pvr；同时对前缀词和精准词的返回结果，拉取强素材广告，如普通卡片、聚合卡片、三图卡片、专题卡片等样式，提升曝光率并吸引用户下载；进行自然精准结果的打压，商业精准结果强化。</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/【Grow】三个月云pm的一点思考/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry Lee">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杰瑞李">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/【Grow】三个月云pm的一点思考/" itemprop="url">【Grow】三个月云pm的一点思考</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T00:03:47+08:00">
-                2019-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>入职百度三个月了，记录下自己工作的思考和感受。</p>
-<p>作为非科班出身的云计算小白，之前对于云计算的认知仅仅停留在租VPS搭梯子探索世界的层面，虽然入职前看了一些云和To B的行业分析文，但其实都只是城外宏观上的一瞥，真正的业务还需要躬身实践才知深浅。</p>
-<p>来了之后主要参与的是容器、k8s和微服务相关的工作，乍一听极为懵逼，所有的汉字都认得，组合到一起就仿佛天书。诚然，这些概念都是较为偏向技术架构层面的知识，本文不谈这些技术的具体细节，说实话目前的我还无法将这些术语讲的透彻，主要谈谈作为pm的一些思考。</p>
-<p>有句话说的好，云上的一切产品其实都是API。API，即应用程序编程接口，在我的理解，API就是将某一模块封装起来提供让外界能够进行调用的一种方式，就好像乐高玩具所规定的拼接部位。云上的产品，不同产品线之间，充斥着API之间的调用。因为许多产品的诞生都是基于其他众多产品的基础上，自然而然地生长出来，就如同云☁️这个概念所传达的含义，IaaS层生长出PaaS，再生长出SaaS。拿云原生这个概念来说，应用程序作为最上层不断生长的植物，根一定扎在底层的服务器BCC土壤中，而磁盘CDS、网络VPC、公网EIP等等，这些都可以看做是土壤的养分以及土壤与空气接触的表面积。企业做应用程序，绝不是仅仅种植一棵植物，而是一片农田或一片森林，这时植物间的灌溉与照料工作，就需要以集群的维度来进行处理，而容器Docker与容器引擎CCE，则是对植物集群更精细化的运营</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/【Grow】没什么主题的抱怨/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry Lee">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杰瑞李">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/16/【Grow】没什么主题的抱怨/" itemprop="url">【Grow】没什么主题的抱怨</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-16T20:03:24+08:00">
-                2019-10-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>校招入职3个月了，在云部门做PaaS平台相关的产品工作。感觉从第一个月的时候自己就不太喜欢这个方向吧，3个月以来主要精力放在了产品层面的页面逻辑设计上，其实和一般的C端产品设计是差不太多的，对PM的要求要多了一层对容器和云相关技术的理解，产品功能与底层技术实现是高耦合的，意味着要在理解集群、环境、容器、网络知识的前提下，去进行产品信息架构的规划与设计。一方面自己对偏底层的技术实在没有太大的兴趣，另一方面对产品设计不能快速得到用户反馈和数据验证倍感不适。</p>
-<p>想想自己还是对策略设计的产品工作感兴趣罢，虽然同样逻辑复杂，但能够和业务联系更紧密，能够在诸多局限条件下利用数据驱动去求最优解的过程，更能感受到作为pm的成就感啊。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/12/【泛PM】配眼镜带来的胡思乱想/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jerry Lee">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杰瑞李">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/12/【泛PM】配眼镜带来的胡思乱想/" itemprop="url">【泛PM】配眼镜带来的胡思乱想</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-12T10:38:24+08:00">
-                2019-10-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>去百视通眼镜超市换眼镜，记得几年前在西安这家眼镜行就有账号体系了，每次配镜都有数据记录，很方便查询之前的度数还有眼镜型号。每次配镜可以兑换积分，积分*10%用来抵扣下次配镜的价格。门店主要宣传的点是镜架折扣很大，19/29/39就能拿到一副镜架，镜片种类很少打折，利用「镜片需要配好一点，镜架可以凑凑合合」的心理，把利润转移至镜片的价格上，再通过积分折扣的策略来缓解用户对偏高价格的敏感(➕眼镜行业的价格不透明)，同时增长复购率。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1150,6 +566,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1346,6 +766,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
