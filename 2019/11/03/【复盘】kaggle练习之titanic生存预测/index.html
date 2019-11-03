@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="入职百度三个月了，记录下自己工作的思考和感受。 作为非科班出身的云计算小白，之前对于云计算的认知仅仅停留在租VPS搭梯子探索世界的层面，虽然入职前看了一些云和To B的行业分析文，但其实都只是城外宏观上的一瞥，真正的业务还需要躬身实践才知深浅。 来了之后主要参与的是容器、k8s和微服务相关的工作，乍一听极为懵逼，所有的汉字都认得，组合到一起就仿佛天书。诚然，这些概念都是较为偏向技术架构层面的知识，">
+<meta name="description" content="之前学习数据挖掘竞赛，跟着做了kaggle上的titanic练习赛，复盘下过程与思考。 数据总览info函数可看出Age、Cabin、Embarked、Fare几个特征存在缺失值，缺失值的处理方法一般有以下几种： （1）如果数据集很多，但有很少的缺失值，可以删掉带缺失值的行； （2）如果该属性相对学习来说不是很重要，可以对缺失值赋均值或者众数。比如在哪儿上船Embarked这一属性（共有三个上船地">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Grow】三个月云pm的一点思考">
-<meta property="og:url" content="http://yoursite.com/2019/10/21/【Grow】三个月云pm的一点思考/index.html">
+<meta property="og:title" content="【复盘】kaggle练习之titanic生存预测">
+<meta property="og:url" content="http://yoursite.com/2019/11/03/【复盘】kaggle练习之titanic生存预测/index.html">
 <meta property="og:site_name" content="杰瑞李">
-<meta property="og:description" content="入职百度三个月了，记录下自己工作的思考和感受。 作为非科班出身的云计算小白，之前对于云计算的认知仅仅停留在租VPS搭梯子探索世界的层面，虽然入职前看了一些云和To B的行业分析文，但其实都只是城外宏观上的一瞥，真正的业务还需要躬身实践才知深浅。 来了之后主要参与的是容器、k8s和微服务相关的工作，乍一听极为懵逼，所有的汉字都认得，组合到一起就仿佛天书。诚然，这些概念都是较为偏向技术架构层面的知识，">
+<meta property="og:description" content="之前学习数据挖掘竞赛，跟着做了kaggle上的titanic练习赛，复盘下过程与思考。 数据总览info函数可看出Age、Cabin、Embarked、Fare几个特征存在缺失值，缺失值的处理方法一般有以下几种： （1）如果数据集很多，但有很少的缺失值，可以删掉带缺失值的行； （2）如果该属性相对学习来说不是很重要，可以对缺失值赋均值或者众数。比如在哪儿上船Embarked这一属性（共有三个上船地">
 <meta property="og:locale" content="CN">
-<meta property="og:updated_time" content="2019-10-20T16:23:37.226Z">
+<meta property="og:updated_time" content="2019-11-03T12:53:52.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【Grow】三个月云pm的一点思考">
-<meta name="twitter:description" content="入职百度三个月了，记录下自己工作的思考和感受。 作为非科班出身的云计算小白，之前对于云计算的认知仅仅停留在租VPS搭梯子探索世界的层面，虽然入职前看了一些云和To B的行业分析文，但其实都只是城外宏观上的一瞥，真正的业务还需要躬身实践才知深浅。 来了之后主要参与的是容器、k8s和微服务相关的工作，乍一听极为懵逼，所有的汉字都认得，组合到一起就仿佛天书。诚然，这些概念都是较为偏向技术架构层面的知识，">
+<meta name="twitter:title" content="【复盘】kaggle练习之titanic生存预测">
+<meta name="twitter:description" content="之前学习数据挖掘竞赛，跟着做了kaggle上的titanic练习赛，复盘下过程与思考。 数据总览info函数可看出Age、Cabin、Embarked、Fare几个特征存在缺失值，缺失值的处理方法一般有以下几种： （1）如果数据集很多，但有很少的缺失值，可以删掉带缺失值的行； （2）如果该属性相对学习来说不是很重要，可以对缺失值赋均值或者众数。比如在哪儿上船Embarked这一属性（共有三个上船地">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/21/【Grow】三个月云pm的一点思考/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/03/【复盘】kaggle练习之titanic生存预测/">
 
 
 
 
 
-  <title>【Grow】三个月云pm的一点思考 | 杰瑞李</title>
+  <title>【复盘】kaggle练习之titanic生存预测 | 杰瑞李</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/【Grow】三个月云pm的一点思考/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/03/【复盘】kaggle练习之titanic生存预测/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry Lee">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【Grow】三个月云pm的一点思考</h1>
+          <h1 class="post-title" itemprop="name headline">【复盘】kaggle练习之titanic生存预测</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T00:03:47+08:00">
-                2019-10-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-03T19:48:00+08:00">
+                2019-11-03
               </time>
             
 
@@ -299,10 +299,16 @@
       
 
       
-        <p>入职百度三个月了，记录下自己工作的思考和感受。</p>
-<p>作为非科班出身的云计算小白，之前对于云计算的认知仅仅停留在租VPS搭梯子探索世界的层面，虽然入职前看了一些云和To B的行业分析文，但其实都只是城外宏观上的一瞥，真正的业务还需要躬身实践才知深浅。</p>
-<p>来了之后主要参与的是容器、k8s和微服务相关的工作，乍一听极为懵逼，所有的汉字都认得，组合到一起就仿佛天书。诚然，这些概念都是较为偏向技术架构层面的知识，本文不谈这些技术的具体细节，说实话目前的我还无法将这些术语讲的透彻，主要谈谈作为pm的一些思考。</p>
-<p>有句话说的好，云上的一切产品其实都是API。API，即应用程序编程接口，在我的理解，API就是将某一模块封装起来提供让外界能够进行调用的一种方式，就好像乐高玩具所规定的拼接部位。云上的产品，不同产品线之间，充斥着API之间的调用。因为许多产品的诞生都是基于其他众多产品的基础上，自然而然地生长出来，就如同云☁️这个概念所传达的含义，IaaS层生长出PaaS，再生长出SaaS。拿云原生这个概念来说，应用程序作为最上层不断生长的植物，根一定扎在底层的服务器BCC土壤中，而磁盘CDS、网络VPC、公网EIP等等，这些都可以看做是土壤的养分以及土壤与空气接触的表面积。企业做应用程序，绝不是仅仅种植一棵植物，而是一片农田或一片森林，这时植物间的灌溉与照料工作，就需要以集群的维度来进行处理，而容器Docker与容器引擎CCE，则是对植物集群更精细化的运营</p>
+        <p>之前学习数据挖掘竞赛，跟着做了kaggle上的titanic练习赛，复盘下过程与思考。</p>
+<h2 id="数据总览"><a href="#数据总览" class="headerlink" title="数据总览"></a>数据总览</h2><p>info函数可看出Age、Cabin、Embarked、Fare几个特征存在缺失值，缺失值的处理方法一般有以下几种：</p>
+<p>（1）如果数据集很多，但有很少的缺失值，可以删掉带缺失值的行；</p>
+<p>（2）如果该属性相对学习来说不是很重要，可以对缺失值赋均值或者众数。比如在哪儿上船Embarked这一属性（共有三个上船地点），缺失俩值，可以用众数赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_data.Embarked[train_data.Embarked.isnull()] = train_data.Embarked.dropna().mode().values</span><br></pre></td></tr></table></figure>
+
+<p>（3）对于标称属性，可以赋一个代表缺失的值，比如‘U0’。因为缺失本身也可能代表着一些隐含信息。比如船舱号Cabin这一属性，缺失可能代表并没有船舱</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#replace missing value with U0</span></span><br><span class="line">train_data[<span class="string">'Cabin'</span>] = train_data.Cabin.fillna(<span class="string">'U0'</span>) <span class="comment"># train_data.Cabin[train_data.Cabin.isnull()]='U0'</span></span><br></pre></td></tr></table></figure>
+
+<p>（4）使用回归 随机森林等模型来预测缺失属性的值。因为Age在该数据集里是一个相当重要的特征（先对Age进行分析即可得知），所以保证一定的缺失值填充准确率是非常重要的，对结果也会产生较大影响。一般情况下，会使用数据完整的条目作为模型的训练集，以此来预测缺失值。对于当前的这个数据，可以使用随机森林来预测也可以使用线性回归预测。这里使用随机森林预测模型，选取数据集中的数值属性作为特征（因为sklearn的模型只能处理数值属性，所以这里先仅选取数值特征，但在实际的应用中需要将非数值特征转换为数值特征）</p>
 
       
     </div>
@@ -327,8 +333,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/16/【Grow】没什么主题的抱怨/" rel="next" title="【Grow】没什么主题的抱怨">
-                <i class="fa fa-chevron-left"></i> 【Grow】没什么主题的抱怨
+              <a href="/2019/11/03/【复盘】2018华为软件精英挑战赛回想/" rel="next" title="【复盘】2018华为软件精英挑战赛回想">
+                <i class="fa fa-chevron-left"></i> 【复盘】2018华为软件精英挑战赛回想
               </a>
             
           </div>
@@ -336,10 +342,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/21/【复盘】搜索提升变现效率case/" rel="prev" title="【复盘】搜索提升变现效率case">
-                【复盘】搜索提升变现效率case <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -391,8 +393,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -434,6 +445,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据总览"><span class="nav-number">1.</span> <span class="nav-text">数据总览</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

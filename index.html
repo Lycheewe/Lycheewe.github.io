@@ -229,6 +229,278 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/03/【复盘】kaggle练习之titanic生存预测/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Lee">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杰瑞李">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/【复盘】kaggle练习之titanic生存预测/" itemprop="url">【复盘】kaggle练习之titanic生存预测</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-03T19:48:00+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前学习数据挖掘竞赛，跟着做了kaggle上的titanic练习赛，复盘下过程与思考。</p>
+<h2 id="数据总览"><a href="#数据总览" class="headerlink" title="数据总览"></a>数据总览</h2><p>info函数可看出Age、Cabin、Embarked、Fare几个特征存在缺失值，缺失值的处理方法一般有以下几种：</p>
+<p>（1）如果数据集很多，但有很少的缺失值，可以删掉带缺失值的行；</p>
+<p>（2）如果该属性相对学习来说不是很重要，可以对缺失值赋均值或者众数。比如在哪儿上船Embarked这一属性（共有三个上船地点），缺失俩值，可以用众数赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_data.Embarked[train_data.Embarked.isnull()] = train_data.Embarked.dropna().mode().values</span><br></pre></td></tr></table></figure>
+
+<p>（3）对于标称属性，可以赋一个代表缺失的值，比如‘U0’。因为缺失本身也可能代表着一些隐含信息。比如船舱号Cabin这一属性，缺失可能代表并没有船舱</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#replace missing value with U0</span></span><br><span class="line">train_data[<span class="string">'Cabin'</span>] = train_data.Cabin.fillna(<span class="string">'U0'</span>) <span class="comment"># train_data.Cabin[train_data.Cabin.isnull()]='U0'</span></span><br></pre></td></tr></table></figure>
+
+<p>（4）使用回归 随机森林等模型来预测缺失属性的值。因为Age在该数据集里是一个相当重要的特征（先对Age进行分析即可得知），所以保证一定的缺失值填充准确率是非常重要的，对结果也会产生较大影响。一般情况下，会使用数据完整的条目作为模型的训练集，以此来预测缺失值。对于当前的这个数据，可以使用随机森林来预测也可以使用线性回归预测。这里使用随机森林预测模型，选取数据集中的数值属性作为特征（因为sklearn的模型只能处理数值属性，所以这里先仅选取数值特征，但在实际的应用中需要将非数值特征转换为数值特征）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/03/【复盘】2018华为软件精英挑战赛回想/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Lee">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杰瑞李">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/【复盘】2018华为软件精英挑战赛回想/" itemprop="url">【复盘】2018华为软件精英挑战赛回想</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-03T16:14:12+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>复盘一下之前参加的华为软挑，算是拾起很久没接触过的数学模型知识。</p>
+<p>【赛题回顾】<br><strong>背景：</strong></p>
+<p>云平台为了满足不同租户的需求,提供了一种可随时自助获取、可弹性伸缩的云服务器,即弹性云服务器(Elastic Cloud Server,ECS)。为容纳更多的租户请求、并尽可能提高资源利用率、降低成本,自动化、智能化的资源调度管理系统非常关键。</p>
+<p>由于租户对ECS实例(虚拟机,VM)请求的行为具有一定规律,可以通过对历史ECS实例请求的分析,预测到未来一段时间的ECS实例请求,然后对预测的请求分配资源(如图1所示),这样可以找到一个接近最优的分配策略,实现资源最大化利用,同时也能参考预测的结果制定云数据中心的建设计划。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8kx9mjr91j30fd0520t8.jpg" alt></p>
+<p>物理服务器:<br>云数据中心通常由大规模的物理服务器集群所组成,通过虚拟化技术,可以对每个物理节点的资源(如CPU、内存、硬盘等)进行隔离,使得每台物理机上可以同时容纳多个虚拟机,这些虚拟机即共享该物理服务器上的所有资源。为了保证每台虚拟机的运行性能,通常物理资源不能“超分”,即每台物理服务器上所有虚拟机的虚拟资源总量不能超过其物理资源总量。这里假设物理服务器只有一种规格大小。</p>
+<p>虚拟机规格:<br>云平台通常预先定义了各种类型虚拟机的规格(flavor),便于租户选择购买。例如,如果租户对计算要求低,而内存要求相对高,可以选择4个vCPU、16GB内存的配置。由于不考虑物理资源的“超分”,虚拟机的资源占用可与物理资源进行一比一的映射。当然,不同规格的虚拟机有不同的性能,价格也不一。</p>
+<p>资源维度:<br>如上述,虚拟机正常工作需要多个维度的资源同时配合,如CPU、内存、硬盘、网络等等,每种资源都可能成为瓶颈,并且每种资源分配不合理都可能产生碎片。这里假设只需要考虑单个维度资源的使用,即尽可能最大化每台物理服务器的CPU或者内存(Mem)的利用率,但在考虑某个维度资源优化的同时,要保证其他资源不能超分。</p>
+<p>历史请求数据:<br>租户在云平台上每申请一台虚拟机都会在后台的数据库产生一条数据,每条数据包含了虚拟机的ID、虚拟机的规格大小以及创建时间等。如果我们可以获取到云平台在过去一段时间的所有虚拟机请求数据,通过训练这些数据特征,可以预测下一个时间段可能到来的虚拟机请求分布。</p>
+<p>比赛程序内容:<br>请你设计一个程序能够精确预测未来某个时间段内的虚拟机的请求情况,并寻找最佳的资源分配方案:对输入的虚拟机历史请求数据进行建模分析以及训练,确定系数给出预测模型,然后对给定预测时间段内不同规格的虚拟机数量进行预测,最后根据预测结果把虚拟机部署到物理服务器上,使得服务器的资源利用率最大化。</p>
+<p>比赛胜负规则<br>比较参赛者程序输出的预测结果的精度以及部署的资源利用率的乘积,得分较大者胜出。如果出现得分相同的情况,则比较程序运行时间,时间短者胜出。若运行时间也相同,则根据提交时间先后来区分排名。如输出结果不满足约束条件,得分为零。 (备注:资源利用率只需要考虑单个维度,如CPU或内存的利用率)</p>
+<p>【解决方案】</p>
+<p>简单来讲，赛题问题可以分为两部分，1.根据每个flavor的历史请求数据，建立预测模型来对未来一段时间（一周至两周）的订单数据各flavor总量进行预测  2.根据预测得到的flavor请求数，编写放置分配算法。</p>
+<p>本次比赛，我主要参与了预测阶段的工作，包含数据预处理以及预测模型的构建。</p>
+<p><strong>平均值大法</strong>：</p>
+<p>最开始运用直接求平均值来作为参照预测的方法，按照训练数据时间长度（一个月）和待预测时间段（一周）的比例，以及训练数据中各种虚拟机用量的统计数据，来预测未来时间段的虚拟机用量。这种方法简单粗暴，适合较为平稳的数据集，除去噪声影响，效果应该不算差。但是根据线上线下的测试结果，预测数据偏低，虚拟机的用量随时间呈现一个增长的趋势，这时可以设定修正系数，如α = 1.2，来加入趋势增长的信息。</p>
+<p><strong>滑动平均+线性回归</strong>：</p>
+<p>直接运用平均的方法丢失了较多信息，结果并不如人意，考虑改用滑动平均的方法，根据待预测目标的时间长度（一周），对训练时间内各种虚拟机的用量序列进行滑动求和，即统计计算连续一周内的虚拟机用量。这里涉及到一个步长的概念，滑动步长为1，即滑动一天求和一次；还有滑动一周求和一次等等，比赛中我们试了不少步长，发现步长为一周7天的效果相对较好。求得滑动求和（平均）序列后，在此基础上做线性回归来预测未来flavor数量。</p>
+<p><strong>加权平均</strong>：</p>
+<p>借鉴指数平滑和滑动平均的一种模型，以滑动求和序列为基础，做加权平均。时间序列预测的一个特点我认为是与待预测时间越接近的历史数据越为重要，考虑利用权重分配来进行预测<br>$$<br>X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdots+\alpha(1-\alpha)^{n-1} X_{t-n}<br>$$<br>这个方法有一些自回归（Auto-Regression）的意思。当n趋于无穷时，系数的求和为1。这里引入了一个参数$$<br>\alpha$$，所以可以进行一些调参，但是还是因为时间问题，尝试的机会不多了。队友随便定了一个0.6，效果比上面的方法都要好很多。</p>
+<h3 id="滑动平均法的优缺点"><a href="#滑动平均法的优缺点" class="headerlink" title="滑动平均法的优缺点"></a>滑动平均法的优缺点</h3><p>使用移动平均法进行预测能平滑掉需求的突然波动对预测结果的影响。但移动平均法运用时也存在着如下问题：</p>
+<p>1、 加大移动平均法的期数（即加大n值）会使平滑波动效果更好，但会使预测值对数据实际变动更不敏感；</p>
+<p>2、 移动平均值并不能总是很好地反映出趋势。由于是平均值，预测值总是停留在过去的水平上而无法预计会导致将来更高或更低的波动；</p>
+<p>3、 移动平均法要由大量的过去数据的记录。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/【insights】买书与运动/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1307,7 +1579,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
