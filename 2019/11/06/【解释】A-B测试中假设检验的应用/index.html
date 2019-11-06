@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="杰瑞李">
 <meta property="og:description" content="A/B测试的概念相信大家都耳熟能详，头条系app发展迅速后，这个概念更是成了互联网增长圈子里的圣经，仿佛什么功能上线之前都能进行A/B测试来验证效果。但是A/B测试得到的结果具体应该怎么评估呢，A版本和B版本所得到的数据效果差异该怎么评判？ 假设随机抽取了大量的两组用户，测试新功能，希望能提高用户平均购买金额；保证样本量和测试时长足够，发现新功能版本有提升1%，怎样确定这个结果是可信的？   这个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-06T08:11:43.880Z">
+<meta property="og:updated_time" content="2019-11-06T08:25:45.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【解释】A&#x2F;B测试中假设检验的应用">
 <meta name="twitter:description" content="A/B测试的概念相信大家都耳熟能详，头条系app发展迅速后，这个概念更是成了互联网增长圈子里的圣经，仿佛什么功能上线之前都能进行A/B测试来验证效果。但是A/B测试得到的结果具体应该怎么评估呢，A版本和B版本所得到的数据效果差异该怎么评判？ 假设随机抽取了大量的两组用户，测试新功能，希望能提高用户平均购买金额；保证样本量和测试时长足够，发现新功能版本有提升1%，怎样确定这个结果是可信的？   这个">
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Explanation/" itemprop="url" rel="index">
-                    <span itemprop="name">Explanation</span>
+                  <a href="/categories/explanation/" itemprop="url" rel="index">
+                    <span itemprop="name">explanation</span>
                   </a>
                 </span>
 
@@ -344,9 +344,9 @@
       
         <p>A/B测试的概念相信大家都耳熟能详，头条系app发展迅速后，这个概念更是成了互联网增长圈子里的圣经，仿佛什么功能上线之前都能进行A/B测试来验证效果。但是A/B测试得到的结果具体应该怎么评估呢，A版本和B版本所得到的数据效果差异该怎么评判？</p>
 <p>假设随机抽取了大量的两组用户，测试新功能，希望能提高用户平均购买金额；保证样本量和测试时长足够，发现新功能版本有提升1%，怎样确定这个结果是可信的？  </p>
-<p>这个问题可以通用描述成 旧版本所得到的指标均值为 $$\bar{x}$$ ，新版本所得到的指标均值为 $$\bar{y}$$，$$\bar{y}$$ 的数值表现好于 $$\bar{x}$$，怎样评估新版本有效？</p>
+<p>这个问题可以通用描述成 旧版本所得到的指标均值为 <script type="math/tex">\bar{x}</script> ，新版本所得到的指标均值为 <script type="math/tex">\bar{y}</script>，<script type="math/tex">\bar{y}</script> 的数值表现好于 <script type="math/tex">\bar{x}</script>，怎样评估新版本有效？</p>
 <p>先明确一个问题，什么是假设检验呢？假设检验是通过样本平均数推论总体平均数的统计方法。，那么能够建立样本平均数与总体平均数的关系，就能通过研究样本得到对总体（所有用户）的结论。它涉及多个统计基础，比如：z分数（标准正态分布）、概率及分布、样本平均数的分布。</p>
-<p>我们可以利用双样本 $$t$$ 检验，原假设 $$H0$$ 为新版本指标均值维持不变，取 $$\alpha$$ =0.05，然后 找相关自由度的 $$t$$ 分布的95%分位数，也就是看$$\bar{y}$$ 是否在$$x$$ 的 $$t$$ 分布95%置信区间内，如果不在这个置信区间里，则说明 (1) 我们得到了一个概率极小的实验结果 或者 (2) 零假设是错误的 ，所以就可以显著拒绝原假设，新版本有效。</p>
+<p>我们可以利用双样本 <script type="math/tex">t</script> 检验，原假设 <script type="math/tex">H0</script> 为新版本指标均值维持不变，取 <script type="math/tex">\alpha</script> =0.05，然后 找相关自由度的 <script type="math/tex">t</script> 分布的95%分位数，也就是看<script type="math/tex">\bar{y}</script> 是否在<script type="math/tex">x</script> 的 <script type="math/tex">t</script> 分布95%置信区间内，如果不在这个置信区间里，则说明 (1) 我们得到了一个概率极小的实验结果 或者 (2) 零假设是错误的 ，所以就可以显著拒绝原假设，新版本有效。</p>
 
       
     </div>
@@ -692,6 +692,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
