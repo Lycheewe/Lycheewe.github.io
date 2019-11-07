@@ -1176,9 +1176,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
 <p>Pod 不是持久的，会在宕掉时自动重启。</p>
 <p>当应用需要水平扩展时，ReplicationSet 会复制 Pod。</p>
 <p>Pod 活在 Worker Node 中。</p>
-<center>集群层面</center>
-
-<p><strong>集群</strong></p>
+<p><center>集群层面</center><br><strong>集群</strong></p>
 <p>K8s 集群由 Master 集群和 Worker Node 组成。</p>
 <p>下面是集群的示意图，图片重点展示了多个 Pod 是如何运行正在 Worker Node 中以及 Master 如何治理 Worker Node 的。</p>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f5522gu3j30hg0got9y.jpg" alt></p>
@@ -1191,9 +1189,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
 <p>Master 集群有很多好玩的别名，如 Master 节点、Kubernetes Master、集群控制面板、控制面板或者直接叫 Master，但无论怎么叫，它的作用是治理 Worker Node。</p>
 <p>Master 做出调度决策，响应事件，实现更改，并监视集群。</p>
 <p>Master 和 Worker Node 都包含子进程组件。</p>
-<center>Node 进程</center>
-
-<p><strong>Master 组件</strong></p>
+<p><center>Node 进程</center><br><strong>Master 组件</strong></p>
 <p>Master 组件包含 API server（即 kube-apiserver）、Scheduler（即 kube-scheduler）、kube-controller-manager 及 cloud-controller manager。</p>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f56bmoe6j30h30awmxz.jpg" alt></p>
 <p>下面我们简要看下各个组件。</p>
@@ -1209,16 +1205,12 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
 <p>kube-proxy——连接正确 Pod 的路由，也扮演跨 Pod 服务负载均衡的角色。</p>
 <p>容器运行时——下载镜像，运行容器，例如：Docker 就是一个容器运行时。</p>
 <p>让我们深入到最后一层，看看这些容器运行时中在运行什么。</p>
-<center>Docker 容器层面</center>
-
-<p>如果你想使用 K8s 运行应用，应用需要在容器中。Docker 是目前为止最为常用的容器平台，我们假设你在使用 Docker。</p>
+<p><center>Docker 容器层面</center><br>如果你想使用 K8s 运行应用，应用需要在容器中。Docker 是目前为止最为常用的容器平台，我们假设你在使用 Docker。</p>
 <p>在创建 Deployment 时，需要确定 Pod 应该使用哪个 Docker 镜像，容器运行时（runtime）会下载镜像并创建容器。</p>
 <p>K8s 不会直接创建容器，它会创建包含容器的 Pod。Pod 中的容器会共享配置资源，如 Volume 存储。</p>
 <p>管理和运行 Pod 的高级别 K8s API 资源有5个: Deployment，StatefulSet， DaemonSet，Job 和 CronJob。这些对象负责管理和运行 Pod，来创建和运行容器。</p>
 <p>下面让我们看看这些创建和管理连续流程的控制器。</p>
-<center>ReplicaSets，StatefulSets 及 DaemonSets</center>
-
-<p>正如你所了解到的，ReplicaSet 创建并管理 Pod。如果由于 Node 出错，导致 Pod 关闭，ReplicaSet 会自动在另外的 Node 中替换 Pod。所以应该通过 Deployment 来创建 ReplicaSet，而不是直接创建，因为通过 Deployment 可以更加轻松地更新应用。</p>
+<p><center>ReplicaSets，StatefulSets 及 DaemonSets</center><br>正如你所了解到的，ReplicaSet 创建并管理 Pod。如果由于 Node 出错，导致 Pod 关闭，ReplicaSet 会自动在另外的 Node 中替换 Pod。所以应该通过 Deployment 来创建 ReplicaSet，而不是直接创建，因为通过 Deployment 可以更加轻松地更新应用。</p>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8f58iopqcj30ig0ad3zf.jpg" alt></p>
 <p>应用有时需要保存状态（state）信息，你可以将状态认为是当前用户与应用交互的状态。所以在电子游戏中，它是用户角色在某个时间点上的所有的唯一形态。</p>
 <p>例如，在最初的《超级马里奥兄弟》游戏中，状态将包含用户游戏的所有相关方面：什么级别，该级别中的位置，大或小，火球或没有火球，多少硬币，多少点数，以及多少生命。</p>
@@ -1231,9 +1223,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
 <p>DaemonSet 用于处理连续的过程，在每个 Node 上运行一个 Pod，每个自动被放入集群的 Node 会通过 DaemonSet 启动 Pod。DaemonSet 对后台运行的任务(如监控和日志收集)非常有用。</p>
 <p>StatefulSet 和 DaemonSet 不受 Deployment 控制，虽然两者与 ReplicaSet 位于同级别的抽象层，在当前 API 中没有针对它们更高层级的抽象层了。</p>
 <p>下面我们来看下 Job 和 CronJob。</p>
-<center>Jobs and CronJobs</center> 
-
-<p><strong>Job</strong></p>
+<p><center>Jobs and CronJobs</center><br><strong>Job</strong></p>
 <p>Job 是 Pod 批处理的 supervisor。Job 创建 Pod，并通过跟踪成功完成任务的 Pod 数量来确保任务的执行。与 ReplicaSet 不同，一旦容器内的任务成功完成，容器就不再重新启动。当运行一次性任务时，可以使用 Job。</p>
 <p><strong>CronJob</strong></p>
 <p>如果你想定期在特定时间（如每个小时，每天或者每月）运行 Job，可以创建一个 CronJob，CronJob 和 Job 类似，但它是在固定的时间间隔，定时重复执行。</p>
@@ -1243,9 +1233,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
 <p>K8s 服务为一组 Pod 创建一个访问点。服务提供一致的 IP 地址和端口来访问底层 Pod。外部用户和内部 Pod 都使用服务与其他 Pod 通信。</p>
 <p>服务种类繁多。与 K8s 建立网络是一个值得参考的主题。幸运的是，Sandeep Dinesh 有一个很好的参考案例[3]。</p>
 <p>下面我们来看下使用 Volume 和 PersistentVolume 存储数据。</p>
-<center>Volumes，PersistentVolumes 及 PersistentVolume Claims</center>
-
-<p><strong>Volume</strong></p>
+<p><center>Volumes，PersistentVolumes 及 PersistentVolume Claims</center><br><strong>Volume</strong></p>
 <p>Volume 是可以存放数据的目录，是 Pod 的组成部分，不独立于 Pod 存在。基于 Pod 规范创建 Volume，并且 Volume 不能单独删除。</p>
 <p>Pod 中的容器都可以访问 Volume，每个想访问 Volume 的容器必须单独挂载它。</p>
 <p>K8s Volume 的生命周期比任何容器的生命周期都长，当外围的 Pod 死掉后，Volume 也会死掉。但某些 Volume 类型的文件会继续存在于本地或者云端，即使在 Volume 消失之后。</p>
@@ -1263,9 +1251,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
 <p>然后用户创建一个Pod， Pod 使用了 PVC 的 Volume。</p>
 <p>PersistentVolume 具有独立于 Pod 的生命周期，事实上，Pod 甚至都不知道 PV，只知道 PVC。</p>
 <p>PVC 消耗 PV 资源，类似 Pod 消耗 Node 资源。</p>
-<center>总结</center>
-
-<p>我希望这篇对 K8s 概念的介绍对你有用，如果帮到了你，希望你可以在社交平台上分享，以便别人也可以读到。</p>
+<p><center>总结</center><br>我希望这篇对 K8s 概念的介绍对你有用，如果帮到了你，希望你可以在社交平台上分享，以便别人也可以读到。</p>
 <p>下面我们总结一些上述讲到的 K8s 概念，Deployment 的六层抽象：</p>
 <ul>
 <li><p>Deployment：管理 ReplicaSet，用于持久的，无状态的应用（如 HTTP 服务器）</p>
@@ -1315,9 +1301,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
 <li>PersistentVolume，PersistentVolumeClaim：分配存储的系统。</li>
 </ul>
 <p>理解 k8s 需要理解许多抽象概念。不要指望第一次就能记住。查看下面的一些资源来构建你的心智模型。</p>
-<center>资源</center>
-
-<p>下面的资源可以加深你所学到知识。</p>
+<p><center>资源</center><br>下面的资源可以加深你所学到知识。</p>
 <ul>
 <li><a href="http://mp.weixin.qq.com/s?__biz=MzA5OTAyNzQ2OA==&amp;mid=2649696224&amp;idx=1&amp;sn=d80a082157b8c9bea33e2c1fbffe4108&amp;chksm=88931883bfe4919521b701051519d3ba72690bc381e47b3c12d60620c293d38ed22cf2a597ff&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">来自 Google 的漫画版核心概念</a></li>
 <li>另外一个来自 Daniel Sanche 的比较好的 K8s 核心概念概览[5]</li>
@@ -1460,7 +1444,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
           
             <p>最近在进行云平台产品设计时，一个困惑是产品功能无法完全地通过产品设计来展现给用户，简单说就是云产品、复杂B端产品通常会涉及到专业的业务知识。这里的业务知识是指广义的业务，比如为开发者服务的云平台，通常涉及到许多“晦涩”的技术背景知识，例如开源框架的使用。这时的产品信息架构中，便会不可避免出现小白（指我）无法一眼理解的模块设计，例如云产品中的集群、部署组、可用区等概念，以及正常用户产品认为是不完美的使用地图和交互。</p>
 <p>一个解决方案是牺牲页面的简洁，添加各种引导文案及标识来被动加快用户适应的进度；另一个方案是用户文档，产出更高要求的用户文档来主动指导用户更快地了解产品的使用路径，减少试错成本。</p>
-<p>当然并不是说产品设计不重要，而是在特定场景下，目标用户通常是有一定的学习力，用户文档会是更好的方式实现“优化”，与其在添加太多跳转与引导文字，既增加了信息架构的复杂度，又增加了操作路径；不如利用文档来辅助产品设计</p>
+<p>当然并不是说产品设计不重要，而是在特定场景下，目标用户通常是有一定的学习力，用户文档会是更好的方式实现“优化”，与其在添加太多跳转与引导文字，既增加了信息架构的复杂度，又增加了操作路径；不如利用文档来辅助产品设计。</p>
 
           
         
@@ -1728,7 +1712,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
             <p>入职百度三个月了，记录下自己工作的思考和感受。</p>
 <p>作为非科班出身的云计算小白，之前对于云计算的认知仅仅停留在租VPS搭梯子探索世界的层面，虽然入职前看了一些云和To B的行业分析文，但其实都只是城外宏观上的一瞥，真正的业务还需要躬身实践才知深浅。</p>
 <p>来了之后主要参与的是容器、k8s和微服务相关的工作，乍一听极为懵逼，所有的汉字都认得，组合到一起就仿佛天书。诚然，这些概念都是较为偏向技术架构层面的知识，本文不谈这些技术的具体细节，说实话目前的我还无法将这些术语讲的透彻，主要谈谈作为pm的一些思考。</p>
-<p>有句话说的好，云上的一切产品其实都是API。API，即应用程序编程接口，在我的理解，API就是将某一模块封装起来提供让外界能够进行调用的一种方式，就好像乐高玩具所规定的拼接部位。云上的产品，不同产品线之间，充斥着API之间的调用。因为许多产品的诞生都是基于其他众多产品的基础上，自然而然地生长出来，就如同云☁️这个概念所传达的含义，IaaS层生长出PaaS，再生长出SaaS。拿云原生这个概念来说，应用程序作为最上层不断生长的植物，根一定扎在底层的服务器BCC土壤中，而磁盘CDS、网络VPC、公网EIP等等，这些都可以看做是土壤的养分以及土壤与空气接触的表面积。企业做应用程序，绝不是仅仅种植一棵植物，而是一片农田或一片森林，这时植物间的灌溉与照料工作，就需要以集群的维度来进行处理，而容器Docker与容器引擎CCE，则是对植物集群更精细化的运营</p>
+<p>有句话说的好，云上的一切产品其实都是API。API，即应用程序编程接口，在我的理解，API就是将某一模块封装起来提供让外界能够进行调用的一种方式，就好像乐高玩具所规定的拼接部位。云上的产品，不同产品线之间，充斥着API之间的调用。因为许多产品的诞生都是基于其他众多产品的基础上，自然而然地生长出来，就如同云☁️这个概念所传达的含义，IaaS层生长出PaaS，再生长出SaaS。拿云原生这个概念来说，应用程序作为最上层不断生长的植物，根一定扎在底层的服务器BCC土壤中，而磁盘CDS、网络VPC、公网EIP等等，这些都可以看做是土壤的养分以及土壤与空气接触的表面积。企业做应用程序，绝不是仅仅种植一棵植物，而是一片农田或一片森林，这时植物间的灌溉与照料工作，就需要以集群的维度来进行处理，而容器Docker与容器引擎CCE，则是对植物集群更精细化的运营。</p>
 
           
         
@@ -1825,7 +1809,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1836,7 +1820,7 @@ X_{t}=\alpha X_{t-1}+\alpha(1-\alpha) X_{t-2}+\alpha(1-\alpha)^{2} X_{t-3}+\cdot
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
